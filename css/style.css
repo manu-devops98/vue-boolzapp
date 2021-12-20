@@ -177,6 +177,7 @@ main {
     background-color: white;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 }
 
 .box {
