@@ -42,7 +42,7 @@ main {
 }
 
 .col-right {
-    background-color: orange;
+    background-color: #FAFAFB;
     width: 70%;
     height: 100%;
 }
@@ -58,6 +58,11 @@ main {
 
 .top-sx {
     display: flex;
+    width: 80%;
+}
+
+.top-sx:hover {
+    background-color: #FAFAFA;
 }
 
 .top-sx img {
@@ -90,7 +95,7 @@ main {
 }
 
 .top-dx i:hover {
-    color: lightgrey;
+    color: black;
 }
 
 .user-info {
@@ -166,7 +171,7 @@ main {
     border:  2px solid lightgrey;
 }
 
-.chat {
+.chat-box {
     width: 95%;
     height: calc(100% - 155px);
     background-color: white;
@@ -183,6 +188,13 @@ main {
     cursor: pointer;
 }
 
+.box:hover {
+    background-color: #FAFAFA;
+}
+
+.box.active {
+    background-color: #E9EBEB;
+}
 .user {
     display: flex;
     width: 65%;
@@ -208,4 +220,70 @@ main {
 
 .date p {
     margin: 0.6em;
+}
+
+
+.chat-container {
+    width: calc(100% - 10px);
+    height: calc(100% - 100px);
+    background-image: url(../img/mine.jpg);
+    overflow: scroll;
+}
+
+.message-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 2em auto;
+}
+
+.box-message {
+    background-color: white;
+    border-radius: 10px;
+    width: 45%;
+    padding: 1em;
+    margin: 0.5em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-message.green {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.box-message p {
+    font-size: 0.8em;
+}
+
+.box-message .date-paragraph {
+    align-self: flex-end;
+    font-size: 0.6em;
+    color: lightgrey;
+}
+
+.bottom-right {
+    height: 50px;
+    width: 100%;
+    background-color: #F3EEEA;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-right i {
+    color: grey;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.bottom-right i:hover {
+    color: black;
+}
+
+.bottom-right input {
+    width: 80%;
+    padding: 0.6em 1.2em;
+    border: none;
 }
