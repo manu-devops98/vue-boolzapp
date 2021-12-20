@@ -43,19 +43,19 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-box">
-                    <div class="box">
+                    <div v-for="element in contacts" class="box">
                         <div class="user">
-                            <img src="img/avatar_1.jpg" alt="">
+                            <img :src="`img/avatar${element.avatar}.jpg`" alt="">
                             <div class="user-info">
-                                <h4>Michele</h4>
+                                <h4>{{  element.name  }}</h4>
                                 <p>ok...</p>
                             </div>
                         </div>
                         <div class="date">
-                            <p>20/12/2021 10:22:21</p>
+                            <p>{{   element.messages[0].date   }}</p>
                         </div>
                     </div>
-                    <div class="box">
+                    <!-- <div class="box">
                         <div class="user">
                             <img src="img/avatar_2.jpg" alt="">
                             <div class="user-info">
@@ -90,7 +90,7 @@
                         <div class="date">
                             <p>10/05/2021 17:22:21</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-right">
