@@ -20,8 +20,8 @@
             <div class="col-left">
                 <div class="top-left">
                     <div class="top-sx">
-                        <img src="img/avatar_io.jpg" alt="">
-                        <h4>Nome Utente</h4>
+                        <img src="img/manuel_avatar.jpg" alt="">
+                        <h4>Manuel Cappello</h4>
                     </div>
                     <div class="top-dx">
                         <i class="fas fa-circle-notch"></i>
@@ -43,7 +43,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-box">
-                    <div v-for="element in contacts" class="box">
+                    <div v-for="(element,index) in contacts" :class="index == 2 ? 'active' : ''" class="box">
                         <div class="user">
                             <img :src="`img/avatar${element.avatar}.jpg`" alt="">
                             <div class="user-info">

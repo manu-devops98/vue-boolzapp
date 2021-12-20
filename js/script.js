@@ -90,6 +90,10 @@ const app = new Vue({
                 },
               ],
             },
-          ]
+          ],
+          counter: null
+    },
+    methods: {
+     
     }
   });

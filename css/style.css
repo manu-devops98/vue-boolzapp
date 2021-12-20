@@ -67,7 +67,7 @@ main {
 
 .top-sx img {
     border-radius: 30px;
-    padding: 0.3em;
+    padding: 0.5em;
 }
 
 .top-sx h4 {
@@ -182,7 +182,7 @@ main {
 
 .box {
     width: 100%;
-    height: 65px;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     border: 2px solid #FAFAFA;
@@ -202,13 +202,13 @@ main {
 }
 
 .user img {
-    border-radius: 30px;
+    border-radius: 50px;
     padding: 0.8em;
 }
 
 .box .user-info p {
     color: lightgrey;
-    font-size: 0.7em;
+    font-size: 0.8em;
     overflow: hidden;
     width: 160px;
     text-overflow: ellipsis;
