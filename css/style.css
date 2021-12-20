@@ -44,10 +44,55 @@ main {
     height: 100%;
 }
 
-.col-left .top-left {
+.col-left .top-left,
+.col-right .top-right {
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 50px;
     background-color: #EAEAEA;
+}
+
+.top-sx {
+    display: flex;
+}
+
+.top-sx img {
+    border-radius: 30px;
+    padding: 0.3em;
+}
+
+.top-sx h4 {
+    align-self: center;
+    font-size: 0.7em;
+}
+
+.top-sx p {
+    color: grey;
+    font-size: 0.7em;
+}
+
+.top-dx {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #B1B1B1;
+    padding: 0.5em;
+}
+
+.top-dx i {
+    font-size: 1.2em;
+    margin: 0 8px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.user-info h4 {
+    align-self: flex-start;
 }
