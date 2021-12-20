@@ -7,7 +7,9 @@
 html {
     width: 100%;
     height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
+
 header {
     height: 120px;
     width: 100%;
@@ -23,6 +25,7 @@ main {
 .container {
     margin: 0.5em auto;
     width: 85%;
+    min-width: 732px;
     height: 95%;
     z-index: 5;
     position: absolute;
@@ -33,7 +36,7 @@ main {
 }
 
 .col-left {
-    background-color: yellow;
+    background-color: #FAFAFA;
     width: 30%;
     height: 100%;
 }
@@ -161,4 +164,48 @@ main {
 
 .search-input input:focus-within {
     border:  2px solid lightgrey;
+}
+
+.chat {
+    width: 95%;
+    height: calc(100% - 155px);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #FAFAFA;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    width: 65%;
+}
+
+.user img {
+    border-radius: 30px;
+    padding: 0.8em;
+}
+
+.box .user-info p {
+    color: lightgrey;
+    font-size: 0.7em;
+}
+
+.date {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+    color: lightgrey;
+    font-size: 0.7em;
+}
+
+.date p {
+    margin: 0.6em;
 }
