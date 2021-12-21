@@ -159,6 +159,10 @@ main {
     cursor: pointer;
 }
 
+.search-input label:hover {
+    color: black;
+}
+
 .search-input input {
     width: 90%;
     padding: 0.4em 0.3em;
@@ -232,9 +236,12 @@ main {
 
 
 .chat-container {
-    width: calc(100% - 10px);
+    width: 100%;
     height: calc(100% - 110px);
-    background-image: url(../img/mine.jpg);
+    /* background-image: url(../img/mine.jpg); */
+    background-image: url('https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+    background-repeat: no-repeat;
     overflow: scroll;
 }
 
