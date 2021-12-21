@@ -25,7 +25,6 @@ main {
 .container {
     margin: 0.5em auto;
     width: 85%;
-    min-width: 732px;
     height: 95%;
     z-index: 5;
     position: absolute;
@@ -38,12 +37,14 @@ main {
 .col-left {
     background-color: #FAFAFA;
     width: 30%;
+    min-width: 210px;
     height: 100%;
 }
 
 .col-right {
     background-color: #FAFAFB;
     width: 70%;
+    min-width: 285px;
     height: 100%;
 }
 
@@ -178,6 +179,7 @@ main {
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 .box {
@@ -190,7 +192,7 @@ main {
 }
 
 .box:hover {
-    background-color: #FAFAFA;
+    background-color: #E9EBEB;
 }
 
 .box.active {
@@ -266,6 +268,7 @@ main {
 .box-message .date-paragraph {
     align-self: flex-end;
     font-size: 0.6em;
+    margin-top: 0.5em;
     color: lightgrey;
 }
 
