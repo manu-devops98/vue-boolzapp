@@ -76,7 +76,7 @@
                 <div class="chat-container">
                     <div class="message-container">
                         
-                        <div v-for="message in contacts[counter].messages" :class="message.status == 'sent' ? 'box-message green' : 'box-message'">
+                        <div v-for="message in contacts[counter].messages" :class="message.status == 'sent' ? 'green' : ''" class="box-message">
                             <p>{{   message.text   }}</p>
                             <p class="date-paragraph">{{   message.date   }}</p>
                         </div>
