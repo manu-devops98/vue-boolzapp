@@ -25,7 +25,7 @@ main {
 .container {
     margin: 0.5em auto;
     width: 85%;
-    height: 95%;
+    height: 90%;
     z-index: 5;
     position: absolute;
     top: 50%;
@@ -53,7 +53,7 @@ main {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 50px;
+    height: 60px;
     background-color: #EAEAEA;
 }
 
@@ -67,7 +67,7 @@ main {
 }
 
 .top-sx img {
-    border-radius: 30px;
+    border-radius: 40px;
     padding: 0.5em;
 }
 
@@ -174,7 +174,7 @@ main {
 
 .chat-box {
     width: 95%;
-    height: calc(100% - 155px);
+    height: calc(100% - 165px);
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -209,7 +209,7 @@ main {
 }
 
 .box .user-info p {
-    color: lightgrey;
+    color: #B8BABC;
     font-size: 0.8em;
     overflow: hidden;
     width: 160px;
@@ -233,7 +233,7 @@ main {
 
 .chat-container {
     width: calc(100% - 10px);
-    height: calc(100% - 100px);
+    height: calc(100% - 110px);
     background-image: url(../img/mine.jpg);
     overflow: scroll;
 }
@@ -269,7 +269,7 @@ main {
     align-self: flex-end;
     font-size: 0.6em;
     margin-top: 0.5em;
-    color: lightgrey;
+    color: #B8BABC;
 }
 
 .bottom-right {
