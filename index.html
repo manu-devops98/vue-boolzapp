@@ -43,16 +43,16 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-box">
-                    <div v-for="(element,index) in contacts" :class="index == 2 ? 'active' : ''" class="box">
+                    <div @click="changeChat(index)" v-for="(element,index) in contacts" :class="isActive(index)" class="box">
                         <div class="user">
                             <img :src="`img/avatar${element.avatar}.jpg`" alt="">
                             <div class="user-info">
                                 <h4>{{  element.name  }}</h4>
-                                <p>{{  element.messages[1].text   }}</p>
+                                <p>{{  lastMessageDate(index,'text')   }}</p>
                             </div>
                         </div>
                         <div class="date">
-                            <p>{{   element.messages[0].date   }}</p>
+                            <p>{{   lastMessageDate(index,'date')   }}</p>
                         </div>
                     </div>
                     <!-- <div class="box">
@@ -96,10 +96,10 @@
             <div class="col-right">
                 <div class="top-right">
                     <div class="top-sx">
-                        <img src="img/avatar_3.jpg" alt="">
+                        <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                         <div class="user-info">
-                            <h4>Samuele</h4>
-                            <p>Ultimo accesso oggi alle 28/03/2021 16:15:22</p>
+                            <h4>{{   contacts[counter].name   }}</h4>
+                            <p>Ultimo accesso oggi alle {{  lastMessageDate(counter,'date')  }}</p>
                         </div>
                     </div>
                     <div class="top-dx">
@@ -110,10 +110,7 @@
                 </div>
                 <div class="chat-container">
                     <div class="message-container">
-                        <div class="box-message">
-                            <p>La marianna va in campagna</p>
-                            <p class="date-paragraph">25/06/2021 17:20:21</p>
-                        </div>
+                        
                         <div class="box-message green">
                             <p>Sbagliato chat per caso?</p>
                             <p class="date-paragraph">25/06/2021 17:20:21</p>
