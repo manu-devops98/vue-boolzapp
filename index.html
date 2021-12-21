@@ -34,7 +34,7 @@
                         <i class="fas fa-bell-slash"></i>
                     </div>
                     <div class="user-info">
-                        <h4>Ricevi notifiche i nuovi messaggi</h4>
+                        <h4>Ricevi notifiche di nuovi messaggi</h4>
                         <a href="">Attiva notifiche desktop</a>
                     </div>
                 </div>
@@ -55,42 +55,7 @@
                             <p>{{   lastMessageDate(index,'date')   }}</p>
                         </div>
                     </div>
-                    <!-- <div class="box">
-                        <div class="user">
-                            <img src="img/avatar_2.jpg" alt="">
-                            <div class="user-info">
-                                <h4>Fabio</h4>
-                                <p>Mi piacerebbe ma devo and...</p>
-                            </div>
-                        </div>
-                        <div class="date">
-                            <p>20/03/2020 10:22:21</p>
-                        </div>
-                    </div>
-                    <div class="box active">
-                        <div class="user">
-                            <img src="img/avatar_3.jpg" alt="">
-                            <div class="user-info">
-                                <h4>Samuele</h4>
-                                <p>Ah scusa!...</p>
-                            </div>
-                        </div>
-                        <div class="date">
-                            <p>28/03/2021 10:42:21</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="user">
-                            <img src="img/avatar_6.jpg" alt="">
-                            <div class="user-info">
-                                <h4>Luisa</h4>
-                                <p>Si ma preferisco andare...</p>
-                            </div>
-                        </div>
-                        <div class="date">
-                            <p>10/05/2021 17:22:21</p>
-                        </div>
-                    </div> -->
+               
                 </div>
             </div>
             <div class="col-right">
@@ -111,17 +76,9 @@
                 <div class="chat-container">
                     <div class="message-container">
                         
-                        <div class="box-message green">
-                            <p>Sbagliato chat per caso?</p>
-                            <p class="date-paragraph">25/06/2021 17:20:21</p>
-                        </div>
-                        <div class="box-message">
-                            <p>Ah scusa!</p>
-                            <p class="date-paragraph">25/06/2021 17:20:21</p>
-                        </div>
-                        <div class="box-message green">
-                            <p>Figurati!</p>
-                            <p class="date-paragraph">25/06/2021 17:20:21</p>
+                        <div v-for="message in contacts[counter].messages" :class="message.status == 'sent' ? 'box-message green' : 'box-message'">
+                            <p>{{   message.text   }}</p>
+                            <p class="date-paragraph">{{   message.date   }}</p>
                         </div>
                     </div>
                 </div>
