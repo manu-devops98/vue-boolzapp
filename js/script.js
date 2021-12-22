@@ -4,7 +4,18 @@
 
 Milestone 2
 - Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-- Click sul contatto mostra la conversazione del contatto cliccato */
+- Click sul contatto mostra la conversazione del contatto cliccato 
+
+Milestone 3
+- Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+- Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo. 
+
+Milestone 4
+- Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+Milestone 5
+- Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+- Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti */
 
 const app = new Vue({
     el: '#app',
@@ -95,7 +106,10 @@ const app = new Vue({
               ],
             },
           ],
-          counter: 0
+          counter: 0,
+          note: '',
+          name: '',
+          copyContactsArray: this.contacts,
     },
     methods: {
       changeChat: function(index) {
@@ -118,6 +132,44 @@ const app = new Vue({
           const lastDate = array[arrayLength].date;
           return lastDate;
         }
-      }
+      },
+      firstLetterUpper: function(word) {
+        let string = word;
+        let stringTwo = string.charAt(0).toUpperCase() + string.slice(1);
+        return stringTwo;
+    },
+      newMessage: function(index) {
+          const array = this.contacts[index].messages;
+          // DATA TEMPO REALE 
+          dayjs.extend(window.dayjs_plugin_customParseFormat)
+          let date = dayjs().format("DD/MM/YYYY HH:mm:ss");
+
+          if (this.note.trim() != '') {
+            this.message = {
+              date: date,
+              text: this.firstLetterUpper(this.note.trim()),
+              status: 'sent' 
+            };
+            array.push(this.message);
+            this.note = '';
+            if (this.message != []) {
+              const botMessage = (setTimeout(() => {
+                this.message = {
+                  date: date,
+                  text: 'Ok',
+                  status: 'received'
+                }
+                array.push(this.message);
+              }, 1000))
+            }
+          }
+      },
+      showContact: function(contact) {
+        if (this.name == '') {
+            return contact.visible = true;
+        } else {
+          return (contact.name.toLowerCase().includes(this.name.toLowerCase()));
+        }
+    },
     }
   });

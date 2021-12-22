@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- script per dayjs -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.20/plugin/customParseFormat.js"></script>
+    <!-- script per dayjs -->
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzapp</title>
 </head>
@@ -40,10 +45,10 @@
                 </div>
                 <div class="search-input">
                     <label for="search"><i class="fas fa-search"></i></label>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model.trim="name" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-box">
-                    <div @click="changeChat(index)" v-for="(element,index) in contacts" :class="isActive(index)" class="box">
+                    <div @click="changeChat(index)" v-for="(element,index) in contacts" :class="isActive(index)" class="box" v-show="showContact(element)">
                         <div class="user">
                             <img :src="`img/avatar${element.avatar}.jpg`" alt="">
                             <div class="user-info">
@@ -84,7 +89,7 @@
                 </div>
                 <div class="bottom-right">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input v-on:keyup.enter="newMessage(counter)" v-model="note" type="text" placeholder="Scrivi un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
