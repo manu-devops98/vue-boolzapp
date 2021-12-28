@@ -123,14 +123,18 @@ const app = new Vue({
         }
       },
       lastMessageDate: function(index, typeofmessage) {
-        const array = this.contacts[index].messages;
-        const arrayLength = array.length - 1;
-        if (typeofmessage == 'text') {
-            const lastText = array[arrayLength].text;
-            return lastText;
-        } else if (typeofmessage == 'date') {
-          const lastDate = array[arrayLength].date;
-          return lastDate;
+        if (this.contacts[index].messages.length > 0) {
+          const array = this.contacts[index].messages;
+          const arrayLength = array.length - 1;
+          if (typeofmessage == 'text') {
+              const lastText = array[arrayLength].text;
+              return lastText;
+          } else if (typeofmessage == 'date') {
+            const lastDate = array[arrayLength].date;
+            return lastDate;
+          }
+        } else {
+          return '';
         }
       },
       firstLetterUpper: function(word) {
@@ -171,5 +175,10 @@ const app = new Vue({
           return (contact.name.toLowerCase().includes(this.name.toLowerCase()));
         }
     },
+    deleteMessage: function (index) {
+      this.contacts[this.counter].messages.splice(index, 1);
+      console.log('click');
+      console.log(index);
+      }
     }
   });

@@ -81,9 +81,15 @@
                 <div class="chat-container">
                     <div class="message-container">
                         
-                        <div v-for="message in contacts[counter].messages" :class="message.status == 'sent' ? 'green' : ''" class="box-message">
+                        <div v-for="(message,index) in contacts[counter].messages" :class="message.status == 'sent' ? 'green' : ''" class="box-message">
                             <p>{{   message.text   }}</p>
                             <p class="date-paragraph">{{   message.date   }}</p>
+                            <i class="fas fa-chevron-down">
+                                <ul class="dropdown-content">
+                                    <li>Message Info</li>
+                                    <li @click="deleteMessage(index)">Delete Message</li>
+                                </ul>
+                            </i>
                         </div>
                     </div>
                 </div>
