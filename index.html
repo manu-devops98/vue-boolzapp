@@ -81,22 +81,24 @@
                 <div class="chat-container">
                     <div class="message-container">
                         
-                        <div v-for="(message,index) in contacts[counter].messages" :class="message.status == 'sent' ? 'green' : ''" class="box-message">
+                        <div v-for="(message,index) in contacts[counter].messages" :class="message.status == 'sent' ? 'green' : ''" class="message">
                             <p>{{   message.text   }}</p>
                             <p class="date-paragraph">{{   message.date   }}</p>
-                            <i class="fas fa-chevron-down">
-                                <ul class="dropdown-content">
-                                    <li>Message Info</li>
-                                    <li @click="deleteMessage(index)">Delete Message</li>
-                                </ul>
-                            </i>
+                            <i @click="message.hover = !message.hover" class="fas fa-chevron-down"></i>
+                                <div v-show="message.hover" class="dropdown-content">
+                                    <ul>
+                                       <li>Message Info</li>
+                                       <li @click="deleteMessage(index)">Delete Message</li>
+                                    </ul>
+                                </div>
                         </div>
                     </div>
                 </div>
                 <div class="bottom-right">
                     <i class="far fa-smile"></i>
                     <input v-on:keyup.enter="newMessage(counter)" v-model="note" type="text" placeholder="Scrivi un messaggio">
-                    <i class="fas fa-microphone"></i>
+                    <i v-if="note.trim() == ''" class="fas fa-microphone"></i>
+                    <i v-else @click="newMessage(counter)" class="fas fa-paper-plane"></i>
                 </div>
             </div>
         </div>

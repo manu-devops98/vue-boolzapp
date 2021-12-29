@@ -253,7 +253,7 @@ main {
     margin: 2em auto;
 }
 
-.box-message {
+.message {
     background-color: white;
     border-radius: 10px;
     width: 45%;
@@ -264,24 +264,23 @@ main {
     position: relative;
 }
 
-.box-message.green {
+.message.green {
     background-color: #D5F9BA;
     align-self: flex-end;
 }
 
-.box-message p {
+.message p {
     font-size: 0.8em;
 }
 
-.box-message .date-paragraph {
+.message .date-paragraph {
     align-self: flex-end;
     font-size: 0.6em;
     margin-top: 0.5em;
     color: #B8BABC;
 }
 
-.box-message .fa-chevron-down {
-    position: relative;
+.message .fa-chevron-down {
     position: absolute;
     bottom: 5px;
     right: 10px;
@@ -290,17 +289,19 @@ main {
     display: none;
 }
 
-.box-message .fa-chevron-down .dropdown-content {
-    display: none;
+.message .dropdown-content {
     position: absolute;
-    left: -20px;
+    top: 90%;
+    left: 70%;
     background-color: #f9f9f9;
     width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
 }
-
-.box-message .fa-chevron-down .dropdown-content li {
+.message .dropdown-content ul {
+    list-style-type: none;
+}
+.message .dropdown-content ul li {
     color: grey;
     font-family: 'Roboto', sans-serif;
     display: block;
@@ -309,15 +310,12 @@ main {
     padding: 1.5em 1em;
 }
 
-.box-message .fa-chevron-down .dropdown-content li:hover {
+.message .dropdown-content li:hover {
     background-color: lightgrey;
+    cursor: pointer;
 }
 
-.box-message .fa-chevron-down:hover .dropdown-content {
-    display: block;
-}
-
-.box-message:hover .fa-chevron-down {
+.message:hover .fa-chevron-down {
     display: block;
 }
 
