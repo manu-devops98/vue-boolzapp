@@ -75,7 +75,13 @@
                     <div class="top-dx">
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i @click="menuDelete = !menuDelete" class="fas fa-ellipsis-v"></i>
+                        <div v-show="menuDelete" class="dropdown-content">
+                            <ul>
+                                <li @click="buttonDeleteMessages(counter)">Elimina Messaggi</li>
+                                <li @click="DeleteChat">Elimina Chat</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="chat-container">

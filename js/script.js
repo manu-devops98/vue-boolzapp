@@ -120,6 +120,7 @@ const app = new Vue({
           counter: 0,
           note: '',
           name: '',
+          menuDelete: false,
     },
     methods: {
       changeChat: function(index) {
@@ -188,11 +189,11 @@ const app = new Vue({
     deleteMessage: function (index) {
       this.contacts[this.counter].messages.splice(index, 1);
       },
-      showBox: function(index) {
-        if (this.hover == false) {
-          this.hover = true;
-          this.contacts[index].messages[index] = this.hover;
-        }
-      }
-    }
+    buttonDeleteMessages: function(index) {
+      this.contacts[index].messages = [];
+    },
+    DeleteChat: function() {
+      this.contacts.splice(this.counter,1);
+    } 
+   }
   });
