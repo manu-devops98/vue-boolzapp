@@ -121,6 +121,20 @@ const app = new Vue({
           note: '',
           name: '',
           menuDelete: false,
+          menuInfo: false,
+          answers: [
+            'Si!',
+            'No!',
+            'Forse',
+            'Assolutamente si',
+            'Provaci',
+            'Potrebbe funzionare',
+            'Forse è meglio di no',
+            'Assolutamente no',
+            'Usciamo?',
+            'Ok',
+            'Andiamo in palestra?'
+          ]
     },
     methods: {
       changeChat: function(index) {
@@ -153,6 +167,12 @@ const app = new Vue({
         let stringTwo = string.charAt(0).toUpperCase() + string.slice(1);
         return stringTwo;
     },
+      getRandomAnswer: function(array) {
+        const min = 0;
+        const max = array.length - 1;
+        const randomAnswer = Math.floor(Math.random() * (max - min + 1) ) + min;
+        return array[randomAnswer];
+      },
       newMessage: function(index) {
           const array = this.contacts[index].messages;
           // DATA TEMPO REALE 
@@ -171,7 +191,7 @@ const app = new Vue({
               const botMessage = (setTimeout(() => {
                 this.message = {
                   date: date,
-                  text: 'Ok',
+                  text: this.getRandomAnswer(this.answers),
                   status: 'received'
                 }
                 array.push(this.message);

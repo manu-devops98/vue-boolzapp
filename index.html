@@ -31,7 +31,15 @@
                     <div class="top-dx">
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i @click="menuInfo = !menuInfo" class="fas fa-ellipsis-v"></i>
+                        <div v-show="menuInfo" class="dropdown-content">
+                            <ul>
+                                <li>Nuovo gruppo</li>
+                                <li>Messaggi Importanti</li>
+                                <li>Impostazioni</li>
+                                <li>Disconnetti</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="notifications">
